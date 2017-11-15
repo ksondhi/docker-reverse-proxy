@@ -16,7 +16,7 @@ RUN apache2ctl start
 RUN a2enmod proxy
 RUN a2enmod proxy_http
 RUN a2enmod proxy_balancer
-RUN a2enmod lbmethod_byrequest
+RUN a2enmod lbmethod_byrequests
 RUN apache2ctl restart
 
 EXPOSE 80 443
