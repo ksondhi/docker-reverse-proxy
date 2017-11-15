@@ -19,4 +19,6 @@ RUN a2enmod proxy_balancer
 RUN a2enmod lbmethod_byrequests
 RUN apache2ctl restart
 
+COPY 000-default.conf /etc/apache2/sites-available/
+
 EXPOSE 80 443
