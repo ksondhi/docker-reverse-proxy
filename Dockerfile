@@ -5,6 +5,8 @@ RUN echo "Updating Ubuntu Software repository..."
 RUN apt-get update -y
 RUN echo "Installing VIM..."
 RUN apt-get install vim -y
+RUN echo "Installing curl..."
+RUN apt-get install curl -y
 # Install Apache server
 RUN echo "Installing Apache server..."
 RUN apt-get install apache2 -y
@@ -16,6 +18,9 @@ RUN apache2ctl start
 RUN a2enmod ssl
 RUN a2enmod proxy
 RUN a2enmod proxy_http
+RUN a2enmod proxy_html
+RUN a2enmod xml2enc
+RUN a2enmod rewrite
 RUN a2enmod proxy_balancer
 RUN a2enmod lbmethod_byrequests
 
